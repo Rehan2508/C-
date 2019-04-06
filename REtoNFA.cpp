@@ -1,4 +1,4 @@
-	#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 
@@ -105,22 +105,22 @@ void kleeni_closer(vector<transition> &v, int &s_cont,stack<state> &s){
 
 
 void sumation(vector<transition> &v, int &s_cont,stack<state> &s){
-		state x1 = s.top();
-		s.pop();
-		state x2 = s.top();
-		s.pop();
-		transition t1(s_cont,x1.start,'^');
-		v.push_back(t1);
-		transition t2(s_cont,x2.start,'^');
-		v.push_back(t2);
-		s_cont++;
-		transition t3(x1.end,s_cont,'^');
-		v.push_back(t3);
-		transition t4(x2.end,s_cont,'^');
-		v.push_back(t4);
-		s_cont++;
-		state s1(t1.initial,t4.final);
-		s.push(s1);
+	state x1 = s.top();
+	s.pop();
+	state x2 = s.top();
+	s.pop();
+	transition t1(s_cont,x1.start,'^');
+	v.push_back(t1);
+	transition t2(s_cont,x2.start,'^');
+	v.push_back(t2);
+	s_cont++;
+	transition t3(x1.end,s_cont,'^');
+	v.push_back(t3);
+	transition t4(x2.end,s_cont,'^');
+	v.push_back(t4);
+	s_cont++;
+	state s1(t1.initial,t4.final);
+	s.push(s1);
 }
 
 
